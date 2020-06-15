@@ -1,0 +1,11 @@
+import numpy as np
+!pip install
+from missingpy import KNNImputer
+nan = np.nan
+X = [[1, 2, nan, 4, 15, 16]
+,[11, 12, 54, 4, 53, 63],
+[41, 2, nan, 43, 55, 46],
+[14, 22, 23, 34, nan, 46]]
+imputer = KNNImputer(n_neighbors=2, weights="uniform")
+g=imputer.fit_transform(X)
+print (g)
